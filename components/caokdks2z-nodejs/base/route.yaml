@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: caokdks2z-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: caokdks2z-nodejs 
+  name: caokdks2z-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: caokdks2z-nodejs
+    weight: 100 
